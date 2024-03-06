@@ -9,7 +9,12 @@
     </style>
   </head>
   <body>
-    <div id="demo"></div>
+    <header>
+      <h1>EXAMPLE OF RATING COMPONENT</h1>
+    </header>
+    <main>
+      <div id="demo"></div>
+    </main>
 
     <script type="module">
       import { html, render } from 'lit';
@@ -17,7 +22,11 @@
 
       const header = 'Hello owc World!';
       render(
-        html` <ysa-rating .header=${header}> some light-dom </ysa-rating> `,
+        html`
+          <ysa-rating> </ysa-rating>
+          <ysa-rating starsCount="10" text="Valora la facilidad de compra">
+          </ysa-rating>
+        `,
         document.querySelector('#demo')
       );
     </script>
