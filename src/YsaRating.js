@@ -51,24 +51,29 @@ export class YsaRating extends LitElement {
   static properties = {
     starsCount: { type: Number },
     rating: { type: Number },
-    text: { type: String },
+    textTitle: { type: String },
     showTextarea: { type: Boolean },
+    textSubtitle: { type: String },
   };
 
   constructor() {
     super();
     this.starsCount = 5;
     this.rating = 2;
-    this.text = '¿Qué te ha parecido?';
+    this.textTitle = '¿Qué te ha parecido?';
     this.showTextarea = false;
+    this.textSubtitle = 'Cuentanos más';
   }
 
   render() {
     return html`
       <div>
-        <h2 class="title">${this.text}</h2>
+        <h2 class="title">${this.textTitle}</h2>
         <div class="stars-container">${this.renderStars()}</div>
-        ${this.showTextarea ? html`<textarea></textarea>` : ''}
+        ${this.showTextarea
+          ? html` <h3 class="subtitle">${this.textSubtitle}</h3>
+              <textarea></textarea>`
+          : ''}
       </div>
     `;
   }
